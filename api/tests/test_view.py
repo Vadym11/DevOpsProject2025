@@ -4,11 +4,16 @@ from django.urls import reverse
 
 class BookViewTest(APITestCase):
     def test_reponse_is_correct(self):
-        # 200 =< 300
-        # 400 =< 500
-        # 500
         url = reverse('api:books')
         response = self.client.get(url, format='json')
         body = response.json()
         assert body['hello'] == 'django'
+        assert response.status_code == status.HTTP_200_OK
+
+class HealthViewTest(APITestCase):
+    def test_reponse_is_correct(self):
+        url = reverse('api:health')
+        response = self.client.get(url, format='json')
+        body = response.json()
+        assert body['status'] == 'ok'
         assert response.status_code == status.HTTP_200_OK
