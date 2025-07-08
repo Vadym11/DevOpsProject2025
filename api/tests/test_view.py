@@ -38,5 +38,5 @@ class HealthViewTest(APITestCase):
         url = reverse('api:health')
         response = self.client.get(url, format='json')
         body = response.json()
-        assert body['status'] == 'okk'
+        assert body['status'] == 'ok'
         assert response.status_code == status.HTTP_200_OK
