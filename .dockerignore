@@ -1,0 +1,8 @@
+.git
+
+*.sqlite3
+__pycache__/
+*.py[codz]
+*$py.class
+
+.github/workflows/example.yaml

@@ -11,6 +11,18 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+# Import environs
+from environs import env
+
+# Read the environment variables and convert each one to the type we need
+
+# DEVELOPMENT_MODE indicates if we are going to be connecting to PSQL or Sqlite
+# The other envs are for configuring the PSQL database connection, this requires a database name, user, password and network host
+DEVELOPMENT_MODE = env.bool("DEVELOPMENT_MODE", True)
+DATABASE_NAME = env.str("DATABASE_NAME", "")
+DATABASE_USER = env.str("DATABASE_USER", "")
+DATABASE_PASSWORD = env.str("DATABASE_PASSWORD", "")
+DATABASE_HOST = env.str("DATABASE_HOST", "")
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -74,12 +86,25 @@ WSGI_APPLICATION = 'bookcatalog.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+# Here use the environment variables to determine where to connect to and how
+if DEVELOPMENT_MODE:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': DATABASE_NAME,
+            'USER': DATABASE_USER,
+            'PASSWORD': DATABASE_PASSWORD,
+            'HOST': DATABASE_HOST,
+            'PORT': '5432',
+        }
+    }
 
 
 # Password validation
