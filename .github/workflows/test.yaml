@@ -86,7 +86,7 @@ jobs:
           images: ${{ env.REGISTRY }}/{{ env.IMAGE_NAME }}
 
       - name: Build and push
-        uses: docker/builder-push-action@v6
+        uses: docker/build-push-action@v6
         with:
           context: .
           tags: ${{ steps.meta.outputs.tags }} # main
