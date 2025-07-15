@@ -60,7 +60,7 @@ jobs:
       - test
       - runmigrations
       - migrations-check
-    if: github.ref == 'refs/heads/main
+    if: github.ref == 'refs/heads/main'
 
     permissions:
       contents: read
