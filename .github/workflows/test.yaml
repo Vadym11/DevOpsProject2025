@@ -84,7 +84,7 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: ghcr.io/vadym11/devopsproject2025
-#          images: ${{ env.REGISTRY }}/{{ env.IMAGE_NAME }}
+#          images: ${{ env.REGISTRY }}/{{ env.IMAGE_NAME }} skipped for now
 
       - name: Build and push
         uses: docker/build-push-action@v6
