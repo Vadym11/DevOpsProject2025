@@ -1,5 +1,6 @@
 name: "Install python and dependencies"
 runs:
+  # means that this could be combined with other actions (as a step)
   using: "composite"
   steps:
     - name: Set up Python
