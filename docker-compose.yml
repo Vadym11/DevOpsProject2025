@@ -11,6 +11,8 @@ services:
       DATABASE_HOST: "db" # container name in this case
       DATABASE_NAME: "books"
       DEVELOPMENT_MODE: false
+    depends_on:
+      - db
   db:
     image: postgres:17.5
     environment:
