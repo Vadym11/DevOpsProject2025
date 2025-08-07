@@ -15,7 +15,8 @@ class HealthView(APIView):
     def get(self, request, *args, **kwargs):
         return Response(
             {
-                "status": "ok"
+                "status": "ok",
+                "running": "yes"
             }
         )
 
