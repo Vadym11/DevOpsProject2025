@@ -4,5 +4,6 @@
 __pycache__/
 *.py[codz]
 *$py.class
+*.tgz
 
 .github/workflows/example.yaml
