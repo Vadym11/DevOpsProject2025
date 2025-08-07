@@ -1,3 +1,9 @@
+## [1.0.1](https://github.com/Vadym11/DevOpsProject2025/compare/v1.0.0...v1.0.1) (2025-08-07)
+
+### Bug Fixes
+
+* **health-view:** Fixed health view to return running status ([3c4a12a](https://github.com/Vadym11/DevOpsProject2025/commit/3c4a12a01805cea6643978fff7c549b6575874c3))
+
 ## 1.0.0 (2025-08-07)
 
 ### Features
