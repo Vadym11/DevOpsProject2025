@@ -1,3 +1,10 @@
+## [1.1.0](https://github.com/Vadym11/DevOpsProject2025/compare/v1.0.1...v1.1.0) (2025-08-07)
+
+### Features
+
+* add new test endpoint ([28d28d1](https://github.com/Vadym11/DevOpsProject2025/commit/28d28d1681d335f3f837c0468ca6e062a648d880))
+* add new test endpoint  ([32b36ea](https://github.com/Vadym11/DevOpsProject2025/commit/32b36eab474c1c105695870954871e4b3acf6df1))
+
 ## [1.0.1](https://github.com/Vadym11/DevOpsProject2025/compare/v1.0.0...v1.0.1) (2025-08-07)
 
 ### Bug Fixes
