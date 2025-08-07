@@ -1,3 +1,9 @@
+## [1.1.1](https://github.com/Vadym11/DevOpsProject2025/compare/v1.1.0...v1.1.1) (2025-08-07)
+
+### Bug Fixes
+
+* fix workflow file [skip ci] ([83e99c7](https://github.com/Vadym11/DevOpsProject2025/commit/83e99c7d2494a3f9db865985dc886b0c28fba3c0))
+
 ## [1.1.0](https://github.com/Vadym11/DevOpsProject2025/compare/v1.0.1...v1.1.0) (2025-08-07)
 
 ### Features
