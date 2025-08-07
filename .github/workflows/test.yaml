@@ -131,7 +131,7 @@ jobs:
       contents: write
     steps:
       - name: Checkout code
-        uses: actions/checkou@tv4
+        uses: actions/checkout@v4
 
       - name: Update Image version in values.yaml
         uses: fjogeleit/yaml-update-action@main
