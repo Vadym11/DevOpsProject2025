@@ -208,4 +208,6 @@ __marimo__/
 
 *.sqlite3
 
+*.tgz
+
 .github/workflows/example.yaml
