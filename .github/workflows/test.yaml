@@ -45,13 +45,47 @@ jobs:
         # this checks exit status: of it is 0 - migrations successful
         run: python manage.py makemigrations --check
 
-  build-docker-image:
+  semantic-release:
     runs-on: ubuntu-latest
     needs:
       - test
       - runmigrations
       - migrations-check
     if: github.ref == 'refs/heads/main'
+    outputs:
+      # chore don't generate release
+      new-release-published: ${{ steps.semantic.outputs.new_release_published }}
+      new-release-version: ${{ steps.semantic.outputs.new_release_version }}
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run semantic-release
+        id: semantic
+        uses: cycjimmy/semanitc-release-action@v4
+        with:
+          extra_plugins: |
+            @semantic-release/changelog
+            @semantic-release/git
+            @semantic-release/github
+            conventional-changelog-conventionalcommits
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  build-docker-image:
+    runs-on: ubuntu-latest
+    needs:
+      - semantic-release
+    if: github.ref == 'refs/heads/main' && needs.semantic-release.outputs.new-release-published == 'true'
 
     permissions:
       contents: read
@@ -75,6 +109,8 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: ghcr.io/vadym11/devopsproject2025
+          tags: |
+            type=semver,pattern={{version}},value=v${{ needs.semantic-release.outputs.new-release-version }}
           # find how to set env and secrets from video
 #          images: ${{ env.REGISTRY }}/{{ env.IMAGE_NAME }} skipped for now
 
