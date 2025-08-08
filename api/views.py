@@ -1,6 +1,5 @@
-from django.core.serializers import serialize
-from django.shortcuts import render
 from rest_framework import status
+from rest_framework.generics import get_object_or_404
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from .models import Book
@@ -57,7 +56,7 @@ class BookView(APIView):
         serializer = BookSerializer(data=data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
-        Book.objects.create()
+        # Book.objects.create()
         # alternatively
         # if not serializer.is_valid():
         #     error_response = {"errors": serializer.errors}
@@ -65,6 +64,25 @@ class BookView(APIView):
 
         return Response(serializer.data)
 
-
 book_view = BookView.as_view()
+
+class BookDetailView(APIView):
+    def get(self, request, pk, *args, **kwargs):
+        book = get_object_or_404(Book, pk=pk)
+        serializer = BookSerializer(book)
+        return Response(serializer.data)
+
+    def put(self, request, pk, *args, **kwargs):
+        book = get_object_or_404(Book, pk=pk)
+        serializer = BookSerializer(book, data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data)
+
+    def delete(self, request, pk, *args, **kwargs):
+        book = get_object_or_404(Book, pk=pk)
+        book.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
+book_detail_view = BookDetailView.as_view()
 
