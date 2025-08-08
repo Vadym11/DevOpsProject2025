@@ -15,8 +15,8 @@ class BookViewTest(APITestCase):
     def test_reponse_is_correct(self):
         book = Book.objects.create(
             title="Demo",
-            description="Description",
-            author="Author1"
+            author="Author1",
+            isbn='1234567890'
         )
         url = reverse('api:books')
         response = self.client.get(url, format='json')
