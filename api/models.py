@@ -4,7 +4,7 @@ from django.db import models
 class Book(models.Model):
     title = models.CharField(max_length=255)
     author = models.CharField(max_length=255)
-    isbn = models.CharField(max_length=13, default='1234567890')  # 13-digit ISBN
+    isbn = models.CharField(max_length=13, default='1234567890')
     published_date = models.DateField(default='2000-01-01')
     created_at = models.DateTimeField(auto_now_add=True)
 
