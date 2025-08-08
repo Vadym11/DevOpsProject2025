@@ -1,3 +1,9 @@
+## [1.3.0](https://github.com/Vadym11/DevOpsProject2025/compare/v1.2.2...v1.3.0) (2025-08-08)
+
+### Features
+
+* add more pytests ([17c775c](https://github.com/Vadym11/DevOpsProject2025/commit/17c775cbbef765274c2929375f1bd885694886df))
+
 ## [1.2.2](https://github.com/Vadym11/DevOpsProject2025/compare/v1.2.1...v1.2.2) (2025-08-08)
 
 ### Bug Fixes
