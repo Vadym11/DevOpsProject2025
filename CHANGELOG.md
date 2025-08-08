@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/Vadym11/DevOpsProject2025/compare/v1.2.0...v1.2.1) (2025-08-08)
+
+### Bug Fixes
+
+* migration1 ([8d086b7](https://github.com/Vadym11/DevOpsProject2025/commit/8d086b74fff6eaa18009daf5ff8c8d5793210f87))
+* revert migration deletion ([f0d3437](https://github.com/Vadym11/DevOpsProject2025/commit/f0d34376172b172d7681ef6f374f0bc7bbf37ce7))
+
 ## [1.2.0](https://github.com/Vadym11/DevOpsProject2025/compare/v1.1.2...v1.2.0) (2025-08-08)
 
 ### Features
