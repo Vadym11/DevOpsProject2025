@@ -1,3 +1,9 @@
+## [1.2.2](https://github.com/Vadym11/DevOpsProject2025/compare/v1.2.1...v1.2.2) (2025-08-08)
+
+### Bug Fixes
+
+* remove comment ([4bff3c0](https://github.com/Vadym11/DevOpsProject2025/commit/4bff3c06b561e93876c8ff1a98457a26c7143426))
+
 ## [1.2.1](https://github.com/Vadym11/DevOpsProject2025/compare/v1.2.0...v1.2.1) (2025-08-08)
 
 ### Bug Fixes
