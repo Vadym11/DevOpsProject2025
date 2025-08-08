@@ -1,3 +1,10 @@
+## [1.2.0](https://github.com/Vadym11/DevOpsProject2025/compare/v1.1.2...v1.2.0) (2025-08-08)
+
+### Features
+
+* **db-schema-change:** change db schema ([e62439b](https://github.com/Vadym11/DevOpsProject2025/commit/e62439b769bdec401bb98f494969516f6d851838))
+* migrate ([4bb9d55](https://github.com/Vadym11/DevOpsProject2025/commit/4bb9d55f0ced1c37f14ba743863af68b3073009b))
+
 ## [1.1.2](https://github.com/Vadym11/DevOpsProject2025/compare/v1.1.1...v1.1.2) (2025-08-08)
 
 ### Bug Fixes
