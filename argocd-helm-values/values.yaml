@@ -1,0 +1,16 @@
+server:
+  ingress:
+    enabled: true
+    path: /argocd
+    annotations:
+      ingress.kubernetes.io/ssl-redirect: "false"
+
+configs:
+  params:
+    server.insecure: true
+    server.baseref: '/argocd'
+    server.rootpath: '/argocd'
+
+global:
+  # localhost
+  domain: ""
