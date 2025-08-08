@@ -8,7 +8,7 @@ urlpatterns = [
         r"^books/", book_view, name='books'
     ),
     re_path(
-            r"^test/", test_view, name='test'
+        r"^test/", test_view, name='test'
     ),
     re_path(
         "", health_view, name='health'
